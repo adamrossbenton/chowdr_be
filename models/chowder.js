@@ -7,7 +7,7 @@ const {Schema, model} = mongoose
 ////////////////////////////////////////////////
 // Model
 ////////////////////////////////////////////////
-const soupSchema = new Schema({
+const chowderSchema = new Schema({
     name: String,
     image: String,
     description: String,
@@ -16,9 +16,9 @@ const soupSchema = new Schema({
     // steps: [String]
 }, {timestamps: true})
 
-const Soup = model("Soup", soupSchema)
+const Chowder = model("Chowder", chowderSchema)
 
 ////////////////////////////////////////////////
 // Export
 ////////////////////////////////////////////////
-module.exports = Soup
+module.exports = Chowder

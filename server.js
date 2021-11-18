@@ -9,8 +9,8 @@ const morgan = require("morgan")
 const session = require("express-session")
 const MongoStore = require("connect-mongo")
 
-const Soup = require("./models/soup")
-const SoupsRouter = require("./controllers/soups")
+const Chowder = require("./models/chowder")
+const ChowdersRouter = require("./controllers/chowders")
 const UserRouter = require("./controllers/user")
 
 const app = express()
@@ -21,7 +21,7 @@ const app = express()
 app.use(cors())
 app.use(morgan("dev"))
 app.use(express.json())
-app.use("/soups", SoupsRouter)
+app.use("/chowders", ChowdersRouter)
 app.use("/user", UserRouter)
 app.use(session({
     secret: SECRET,

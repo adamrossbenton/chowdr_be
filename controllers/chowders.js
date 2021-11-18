@@ -2,7 +2,7 @@
 // Dependencies
 ////////////////////////////////////////////////
 const express = require("express")
-const Soup = require("../models/soup")
+const Chowder = require("../models/chowder")
 
 const router = express.Router()
 
@@ -19,7 +19,7 @@ const router = express.Router()
 // Index
 router.get("/", async (req,res) => {
     try {
-        res.json(await Soup.find({}))
+        res.json(await Chowder.find({}))
     } catch (err) {
         res.status(400).json(err)
     }
@@ -28,7 +28,7 @@ router.get("/", async (req,res) => {
 // Destroy
 router.delete("/:id", async (req,res) => {
     try {
-        res.json(await Soup.findByIdAndRemove(req.params.id))
+        res.json(await Chowder.findByIdAndRemove(req.params.id))
     } catch (err) {
         res.status(400).json(err)
     }
@@ -37,7 +37,7 @@ router.delete("/:id", async (req,res) => {
 // Update
 router.put("/:id", async (req,res) => {
     try {
-        res.json(await Soup.findByIdAndUpdate(
+        res.json(await Chowder.findByIdAndUpdate(
             req.params.id,
             req.body,
             {new: true}
@@ -50,7 +50,7 @@ router.put("/:id", async (req,res) => {
 // Create
 router.post("/", async (req,res) => {
     try {
-        res.json(await Soup.create(req.body))
+        res.json(await Chowder.create(req.body))
     } catch (err) {
         res.status(400).json(err)
     }
