@@ -9,7 +9,7 @@ const morgan = require("morgan")
 const session = require("express-session")
 const MongoStore = require("connect-mongo")
 
-const Soup = require("./models.soup")
+const Soup = require("./models/soup")
 const SoupsRouter = require("./controllers/soups")
 
 const app = express()
