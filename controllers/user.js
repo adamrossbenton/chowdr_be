@@ -21,15 +21,6 @@ router.get("/", async (req,res) => {
     }
 })
 
-// Clear users
-router.delete("/:id", async (req,res) => {
-    try {
-        res.json(await User.findByIdAndRemove(req.params.id))
-    } catch (err) {
-        res.response(400).json(err)
-    }
-})
-
 // Signup
 
 ////////////////////////////////////////////////
