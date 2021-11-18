@@ -11,6 +11,7 @@ const MongoStore = require("connect-mongo")
 
 const Soup = require("./models/soup")
 const SoupsRouter = require("./controllers/soups")
+const UserRouter = require("./controllers/user")
 
 const app = express()
 
@@ -21,6 +22,7 @@ app.use(cors())
 app.use(morgan("dev"))
 app.use(express.json())
 app.use("/soups", SoupsRouter)
+app.use("/user", UserRouter)
 app.use(session({
     secret: SECRET,
     store: MongoStore.create({mongoUrl: DB_URL}),
