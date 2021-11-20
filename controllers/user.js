@@ -12,13 +12,11 @@ const router = express.Router()
 // Routes
 ////////////////////////////////////////////////
 
-// Index/test
-router.get("/", async (req,res) => {
-    try {
-        res.json(await User.find({}))
-    } catch (err) {
-        res.status(400).json(err)
-    }
+// Test
+router.use("/login", (req,res) => {
+    res.send({
+        token: "test123"
+    })
 })
 
 // Signup
