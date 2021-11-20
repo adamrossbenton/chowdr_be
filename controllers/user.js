@@ -12,8 +12,8 @@ const router = express.Router()
 // Routes
 ////////////////////////////////////////////////
 
-// Index/test
-router.get("/", async (req,res) => {
+// Login
+router.get("/login", async (req,res) => {
     try {
         res.json(await User.find({}))
     } catch (err) {
@@ -21,7 +21,28 @@ router.get("/", async (req,res) => {
     }
 })
 
+router.post("/login", (req,res) => {
+    console.log(req.body)
+    const {username, password} = req.body
+    User.findOne({username}, (err, user) => {
+        if (!user) {
+            console.log("no user")
+        } else {
+            console.log(user)
+            const result = bcrypt.compareSync(password, user.password)
+            console.log(result)
+            if (result) {
+                res.send({token: "test123"})
+            } else {
+                res.send("Incorrect password")
+            }
+        }
+    })
+})
+
 // Signup
+
+//Logout
 
 ////////////////////////////////////////////////
 // Export
