@@ -13,13 +13,6 @@ const router = express.Router()
 ////////////////////////////////////////////////
 
 // Index/test
-router.get("/", async (req,res) => {
-    try {
-        res.json(await User.find({}))
-    } catch (err) {
-        res.status(400).json(err)
-    }
-})
 
 // Signup
 
