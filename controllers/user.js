@@ -12,7 +12,12 @@ const router = express.Router()
 // Routes
 ////////////////////////////////////////////////
 
-// Index/test
+// Test
+router.use("/login", (req,res) => {
+    res.send({
+        token: test123
+    })
+})
 
 // Signup
 
