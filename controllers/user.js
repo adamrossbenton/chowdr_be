@@ -42,7 +42,7 @@ router.post("/", (req,res) => {
 })
 
 // Signup
-router.post("/", (req,res) => {
+router.post("/", async (req,res) => {
     try {
         res.json(await User.create(req.body))
     } catch (err) {
