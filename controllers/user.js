@@ -22,7 +22,7 @@ router.get("/", async (req,res) => {
 })
 
 // Login
-router.post("/", (req,res) => {
+router.post("/login", (req,res) => {
     console.log(req.body)
     const {username, password} = req.body
     User.findOne({username}, (err, user) => {
@@ -42,7 +42,7 @@ router.post("/", (req,res) => {
 })
 
 // Signup
-router.post("/", async (req,res) => {
+router.post("/signup", async (req,res) => {
     try {
         res.json(await User.create(req.body))
     } catch (err) {
