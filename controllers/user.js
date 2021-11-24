@@ -22,7 +22,7 @@ router.get("/", async (req,res) => {
 })
 
 // Login
-router.post("/", (req,res) => {
+router.post("/login", (req,res) => {
     console.log(req.body)
     const {username, password} = req.body
     User.findOne({username}, (err, user) => {
@@ -42,13 +42,26 @@ router.post("/", (req,res) => {
 })
 
 // Signup
-router.post("/", async (req,res) => {
+router.post("/signup", async (req,res) => {
     try {
-        res.json(await User.create(req.body))
+        req.body.password = await bcrypt.hash(
+            req.body.password,
+            await bcrypt.genSalt(10)
+        )
+        User.create(req.body)
     } catch (err) {
         res.status(400).json(err)
     }
 })
+
+// Delete
+// router.delete("/:id", async (req,res) => {
+//     try {
+//         res.json(await User.findByIdAndRemove(req.params.id))
+//     } catch (err) {
+//         res.status(400).json(err)
+//     }
+// })
 
 // Logout is handled client-side by clearing token from localstorage
 
