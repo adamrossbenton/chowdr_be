@@ -55,13 +55,13 @@ router.post("/signup", async (req,res) => {
 })
 
 // Delete
-// router.delete("/:id", async (req,res) => {
-//     try {
-//         res.json(await User.findByIdAndRemove(req.params.id))
-//     } catch (err) {
-//         res.status(400).json(err)
-//     }
-// })
+router.delete("/:id", async (req,res) => {
+    try {
+        res.json(await User.findByIdAndRemove(req.params.id))
+    } catch (err) {
+        res.status(400).json(err)
+    }
+})
 
 // Logout is handled client-side by clearing token from localstorage
 
