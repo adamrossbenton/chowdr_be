@@ -10,6 +10,7 @@ const {Schema, model} = mongoose
 const chowderSchema = new Schema({
     name: String,
     image: String,
+    origin: String,
     description: String,
     // TODO: Ingredients, Directions
     // ingredients: [String],
