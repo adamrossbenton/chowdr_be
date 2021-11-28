@@ -12,6 +12,7 @@ const chowderSchema = new Schema({
     image: String,
     origin: String,
     description: String,
+    creator: String,
     // TODO: Ingredients, Directions
     // ingredients: [String],
     // steps: [String]
