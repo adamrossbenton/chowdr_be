@@ -33,7 +33,7 @@ router.post("/login", (req,res) => {
             const result = bcrypt.compareSync(password, user.password)
             console.log(result)
             if (result) {
-                res.send({token: "tokentime"})
+                res.send({token: `${user.username}`})
             } else {
                 res.send("Incorrect password")
             }
