@@ -23,4 +23,4 @@
 ###### * logout feature is handled client-side by removing token from user's localstorage on frontend
 
 #### Challenges
-##### Adam: Implementing token-based authorization, having the backend send a token that can be utilized for authorization and user-specific information on frontend
+##### Adam: Primary backend-specific challenge was implementing token-based authorization, having the backend send a token that can be utilized for authorization and user-specific information on frontend
